@@ -7,6 +7,7 @@ export class Meeting {
     participants: Participant[];
     gameInstanceId: string | null;
     meetingInfo: AWSMeeting | null;
+    host: Participant;
 
     constructor(
         meetingId: string,
@@ -15,6 +16,7 @@ export class Meeting {
         participants: Participant[],
         gameInstanceId: string | null,
         meetingInfo: AWSMeeting | null,
+        host: Participant,
     ) {
         this.meetingId = meetingId;
         this.startDate = startDate;
@@ -22,10 +24,11 @@ export class Meeting {
         this.participants = participants;
         this.gameInstanceId = gameInstanceId;
         this.meetingInfo = meetingInfo;
+        this.host = host;
     }
 
     static fromMap(data: any) {
-        return new Meeting(data.meetingId, data.startDate, data.endDate, data.participants, data.gameInstanceId, data.meetingInfo);
+        return new Meeting(data.meetingId, data.startDate, data.endDate, data.participants, data.gameInstanceId, data.meetingInfo, Participant.fromMap(data.host));
     }
 
     static fromFirestore(snap: any) {
@@ -52,6 +55,7 @@ export class Meeting {
             participants: this.participants ?? null,
             gameInstanceId: this.gameInstanceId ?? null,
             meetingInfo: this.meetingInfo ?? null,
+            host: this.host ?? null,
         }
     }
 }

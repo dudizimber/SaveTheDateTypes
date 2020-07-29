@@ -7,7 +7,8 @@ export declare class Meeting {
     participants: Participant[];
     gameInstanceId: string | null;
     meetingInfo: AWSMeeting | null;
-    constructor(meetingId: string, startDate: Date, endDate: Date | null, participants: Participant[], gameInstanceId: string | null, meetingInfo: AWSMeeting | null);
+    host: Participant;
+    constructor(meetingId: string, startDate: Date, endDate: Date | null, participants: Participant[], gameInstanceId: string | null, meetingInfo: AWSMeeting | null, host: Participant);
     static fromMap(data: any): Meeting;
     static fromFirestore(snap: any): Meeting;
     toMap(): {
@@ -17,5 +18,6 @@ export declare class Meeting {
         participants: Participant[];
         gameInstanceId: string | null;
         meetingInfo: AWSMeeting | null;
+        host: Participant;
     };
 }

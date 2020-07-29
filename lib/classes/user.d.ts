@@ -1,3 +1,4 @@
+import { Participant } from './participant';
 export declare class User {
     userId: string;
     name: string;
@@ -10,4 +11,5 @@ export declare class User {
         name: string;
         email: string;
     };
+    toParticipant(): Participant;
 }

@@ -1,3 +1,4 @@
+import { Participant } from './participant';
 export class User {
     userId: string;
     name: string;
@@ -27,5 +28,9 @@ export class User {
             name: this.name ?? null,
             email: this.email ?? null,
         }
+    }
+
+    toParticipant() {
+        return new Participant(this.userId, this.name, null, false);
     }
 }

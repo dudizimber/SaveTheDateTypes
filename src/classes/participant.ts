@@ -3,13 +3,13 @@ import { Gender } from "../enums";
 export class Participant {
     participantId: string;
     name: string;
-    gender: Gender;
+    gender: Gender | null;
     host: boolean;
 
     constructor(
         participantId: string,
         name: string,
-        gender: Gender,
+        gender: Gender | null,
         host: boolean,
     ) {
         this.participantId = participantId;
