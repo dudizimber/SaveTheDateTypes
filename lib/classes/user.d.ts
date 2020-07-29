@@ -11,5 +11,5 @@ export declare class User {
         name: string;
         email: string;
     };
-    toParticipant(): Participant;
+    toParticipant(isHost: boolean): Participant;
 }

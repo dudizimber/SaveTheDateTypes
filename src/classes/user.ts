@@ -30,7 +30,7 @@ export class User {
         }
     }
 
-    toParticipant() {
-        return new Participant(this.userId, this.name, null, false);
+    toParticipant(isHost: boolean) {
+        return new Participant(this.userId, this.name, null, isHost === true);
     }
 }
