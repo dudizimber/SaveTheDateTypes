@@ -1,0 +1,34 @@
+{
+  "name": "@vizodev/savethedatetypes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "compile": "npm run lint | npm run build | npm run format"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.6"
+  },
+  "peerDependencies": {},
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudizimber/SaveTheDateTypes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dudizimber/SaveTheDateTypes/issues"
+  },
+  "homepage": "https://github.com/dudizimber/SaveTheDateTypes#readme",
+  "description": ""
+}
