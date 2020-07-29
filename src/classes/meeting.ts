@@ -1,11 +1,12 @@
 import { Participant } from "./participant";
-
+import { Meeting as AWSMeeting } from 'aws-sdk/clients/chime';
 export class Meeting {
     meetingId: string;
     startDate: Date;
     endDate: Date | null;
     participants: Participant[];
     gameInstanceId: string | null;
+    meetingInfo: AWSMeeting | null;
 
     constructor(
         meetingId: string,
@@ -13,16 +14,18 @@ export class Meeting {
         endDate: Date | null,
         participants: Participant[],
         gameInstanceId: string | null,
+        meetingInfo: AWSMeeting | null,
     ) {
         this.meetingId = meetingId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.participants = participants;
         this.gameInstanceId = gameInstanceId;
+        this.meetingInfo = meetingInfo;
     }
 
     static fromMap(data: any) {
-        return new Meeting(data.meetingId, data.startDate, data.endDate, data.participants, data.gameInstanceId);
+        return new Meeting(data.meetingId, data.startDate, data.endDate, data.participants, data.gameInstanceId, data.meetingInfo);
     }
 
     static fromFirestore(snap: any) {
@@ -48,6 +51,7 @@ export class Meeting {
             endDate: this.endDate ?? null,
             participants: this.participants ?? null,
             gameInstanceId: this.gameInstanceId ?? null,
+            meetingInfo: this.meetingInfo ?? null,
         }
     }
 }
