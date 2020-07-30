@@ -17,6 +17,12 @@ export declare class Meeting {
         participants: Participant[];
         gameInstanceId: string | null;
         meetingInfo: any;
-        host: Participant;
+        host: {
+            participantId: string;
+            name: string;
+            gender: import("..").Gender | null;
+            host: boolean;
+            peerId: string | null;
+        } | null;
     };
 }

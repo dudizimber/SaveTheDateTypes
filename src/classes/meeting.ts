@@ -55,7 +55,7 @@ export class Meeting {
             participants: this.participants ?? null,
             gameInstanceId: this.gameInstanceId ?? null,
             meetingInfo: this.meetingInfo ?? null,
-            host: this.host ?? null,
+            host: this.host ? this.host.toMap() : null,
         }
     }
 }
