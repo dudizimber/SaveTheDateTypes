@@ -4,7 +4,8 @@ export declare class Participant {
     name: string;
     gender: Gender | null;
     host: boolean;
-    constructor(participantId: string, name: string, gender: Gender | null, host: boolean);
+    peerId: string | null;
+    constructor(participantId: string, name: string, gender: Gender | null, host: boolean, peerId: string | null);
     static fromMap(data: any): Participant;
     static fromFirestore(snap: any): Participant;
     toMap(): {
@@ -12,5 +13,6 @@ export declare class Participant {
         name: string;
         gender: Gender | null;
         host: boolean;
+        peerId: string | null;
     };
 }

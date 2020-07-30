@@ -5,21 +5,24 @@ export class Participant {
     name: string;
     gender: Gender | null;
     host: boolean;
+    peerId: string | null;
 
     constructor(
         participantId: string,
         name: string,
         gender: Gender | null,
         host: boolean,
+        peerId: string | null,
     ) {
         this.participantId = participantId;
         this.name = name;
         this.gender = gender;
         this.host = host;
+        this.peerId = peerId;
     }
 
     static fromMap(data: any) {
-        return new Participant(data.participantId, data.name, data.gender, data.host);
+        return new Participant(data.participantId, data.name, data.gender, data.host, data.peerId);
     }
 
     static fromFirestore(snap: any) {
@@ -32,6 +35,7 @@ export class Participant {
             name: this.name ?? null,
             gender: this.gender ?? null,
             host: this.host ?? false,
+            peerId: this.peerId ?? null
         }
     }
 }
