@@ -1,12 +1,12 @@
 import { Participant } from "./participant";
-import { Meeting as AWSMeeting } from 'aws-sdk/clients/chime';
+//import { Meeting as AWSMeeting } from 'aws-sdk/clients/chime';
 export class Meeting {
     meetingId: string;
     startDate: Date;
     endDate: Date | null;
     participants: Participant[];
     gameInstanceId: string | null;
-    meetingInfo: AWSMeeting | null;
+    meetingInfo: any | null;
     host: Participant;
 
     constructor(
@@ -15,7 +15,7 @@ export class Meeting {
         endDate: Date | null,
         participants: Participant[],
         gameInstanceId: string | null,
-        meetingInfo: AWSMeeting | null,
+        meetingInfo: any | null,
         host: Participant,
     ) {
         this.meetingId = meetingId;
