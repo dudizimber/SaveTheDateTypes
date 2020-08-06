@@ -1,5 +1,5 @@
 export declare enum Sector {
-    ALL = "ALL",
-    DATI = "DATI",
-    CHAREDI = "CHAREDI"
+  ALL = 'ALL',
+  DATI = 'DATI',
+  CHAREDI = 'CHAREDI',
 }

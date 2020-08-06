@@ -1,5 +1,5 @@
 import { Participant } from "./participant";
-//import { Meeting as AWSMeeting } from 'aws-sdk/clients/chime';
+
 export class Meeting {
     meetingId: string;
     startDate: Date;

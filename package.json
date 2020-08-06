@@ -1,12 +1,12 @@
 {
   "name": "@vizodev/savethedatetypes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "compile": "npm run lint | npm run build | npm run format"
+    "compile": "npm run lint && npm run build && npm run format"
   },
   "author": "",
   "license": "ISC",
